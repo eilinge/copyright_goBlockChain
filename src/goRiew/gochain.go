@@ -32,7 +32,7 @@ func lunch() {
 	fmt.Println("发射")
 }
 
-func main() {
+func main05() {
 	abort := make(chan string)
 	go func() {
 		buf := make([]byte, 1)
@@ -43,7 +43,6 @@ func main() {
 
 	tk := time.NewTicker(time.Second * 1)
 	defer tk.Stop()
-	// for {
 	for i := 5; i > 0; i-- {
 		fmt.Println(i)
 		select {
@@ -53,7 +52,6 @@ func main() {
 			return
 		}
 	}
-	// }
 	lunch()
 
 }
