@@ -61,7 +61,7 @@ func commFromClient(conn net.Conn) {
 	ch_logout <- conn.RemoteAddr().String() + "conn failed, logout"
 }
 
-func main() {
+func main11() {
 	//1. 初始化: 通道和map
 	ch_login = make(chan string)
 	ch_logout = make(chan string)

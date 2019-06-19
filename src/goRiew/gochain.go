@@ -46,7 +46,7 @@ func main05() {
 	for i := 5; i > 0; i-- {
 		fmt.Println(i)
 		select {
-		case <-tk.C:
+		case <-tk.C: // 每秒取出一个时间片
 		case num := <-abort:
 			fmt.Println(num)
 			return
