@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"log"
-	"net/rpc"
+
+	// "net/rpc"
+	"github.com/ethereum/go-ethereum/rpc"
 )
 
 func newAcc(pass string) {
@@ -14,7 +16,7 @@ func newAcc(pass string) {
 	defer cli.Close()
 
 	var account string
-	err = cli.Call(&account, "personal_newAccount", pass)
+	err = cli.Call(&account, "personal_newAccount", pass) // 调用ether的personal.newAccount方法
 	if err != nil {
 		log.Fatal("failed to personal_newAccount", err)
 	}
